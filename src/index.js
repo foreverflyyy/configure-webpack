@@ -1,22 +1,26 @@
-/*import printMe from './print.js';*/
-import './styles/style.css';
-import './styles/global.scss';
-import printMe from "./printMe";
+// Test import of a JavaScript module
+import { example } from '@/js/example'
 
-function component() {
-    const element = document.createElement('div');
-    const btn = document.createElement('button');
+// Test import of an asset
+import webpackLogo from '@/images/webpack-logo.svg'
 
-    element.classList.add("example");
-    element.innerHTML = "Hello webpack";
+// Test import of styles
+import '@/styles/index.scss'
 
-    btn.innerHTML = 'Click me and check the console!';
-    btn.classList.add("global")
-    btn.onclick = printMe;
+// Appending to the DOM
+const logo = document.createElement('img')
+logo.src = webpackLogo
 
-    element.appendChild(btn);
+const heading = document.createElement('h1')
+heading.textContent = example()
 
-    return element;
-}
+// Test a background image url in CSS
+const imageBackground = document.createElement('div')
+imageBackground.classList.add('image')
 
-document.body.appendChild(component());
+// Test a public folder asset
+const imagePublic = document.createElement('img')
+imagePublic.src = '/assets/example.png'
+
+const app = document.querySelector('#root')
+app.append(logo, heading, imageBackground, imagePublic)
