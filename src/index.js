@@ -1,7 +1,25 @@
+/*import printMe from './print.js';*/
+import './styles/style.css';
+import './styles/global.scss';
 
+function component() {
+    const element = document.createElement('div');
+    const btn = document.createElement('button');
 
-function printMessage(){
-    console.log("print message");
+    element.classList.add("example")
+    element.innerHTML = "Hello webpack";
+
+    btn.innerHTML = 'Click me and check the console!';
+    btn.classList.add("global")
+    btn.onclick = printMe;
+
+    element.appendChild(btn);
+
+    return element;
 }
 
-printMessage();
+function printMe() {
+    console.log("print me")
+}
+
+document.body.appendChild(component());
