@@ -1,12 +1,13 @@
 /*import printMe from './print.js';*/
 import './styles/style.css';
 import './styles/global.scss';
+import printMe from "./printMe";
 
 function component() {
     const element = document.createElement('div');
     const btn = document.createElement('button');
 
-    element.classList.add("example")
+    element.classList.add("example");
     element.innerHTML = "Hello webpack";
 
     btn.innerHTML = 'Click me and check the console!';
@@ -16,10 +17,6 @@ function component() {
     element.appendChild(btn);
 
     return element;
-}
-
-function printMe() {
-    console.log("print me")
 }
 
 document.body.appendChild(component());

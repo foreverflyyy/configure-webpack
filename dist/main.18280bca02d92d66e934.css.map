@@ -1,0 +1,1 @@
+{"version":3,"file":"main.18280bca02d92d66e934.css","mappings":";;;AAAA;EACI;AACJ,C;;;;ACFA;EACE;AACF,C","sources":["webpack:///./styles/style.css","webpack:///./styles/global.scss"],"sourcesContent":[".example {\r\n    color: blue;\r\n}",".global {\r\n  color: red;\r\n}"],"names":[],"sourceRoot":""}

@@ -9,7 +9,7 @@ if(process.env.NODE_ENV === "production"){
 
 const plugins = [
     new HtmlWebpackPlugin({
-        template: './src/index.html', // Будет использован как шаблон
+        template: './index.html', // Будет использован как шаблон
     }),
     new MiniCssExtractPlugin({
         filename: '[name].[contenthash].css',
@@ -19,10 +19,12 @@ const plugins = [
 module.exports = {
     mode,
     plugins,
-    entry: "./src/index.js",
+    context: path.resolve(__dirname, "src"),
+    entry: "./index.js",
     devtool: 'source-map',
     devServer: {
-        hot: true, // Автоматическая перезагрузка страницы при изменениях
+        // Автоматическая перезагрузка страницы при изменениях
+        hot: true,
     },
     output: {
         filename: "main.js",
@@ -44,6 +46,27 @@ module.exports = {
                     'postcss-loader',
                     'sass-loader',
                 ],
+            },
+            {
+                // В продакшен режиме изображения размером до 8кб будут инлайнится в код
+                // В режиме разработки все изображения будут помещаться в dist/assets
+                test: /\.(png|jpe?g|gif|svg|webp|ico)$/i,
+                type: mode === 'production' ? 'asset' : 'asset/resource',
+            },
+            {
+                test: /\.(woff2?|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/, // не обрабатываем файлы из node_modules
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        // Использование кэша для избежания рекомпиляции при каждом запуске
+                        cacheDirectory: true,
+                    },
+                },
             },
         ]
     }
