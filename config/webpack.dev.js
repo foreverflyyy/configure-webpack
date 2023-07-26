@@ -4,9 +4,7 @@ const {merge} = require("webpack-merge");
 const common = require("./webpack.common");
 
 module.exports = merge(common, {
-    resolve: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-    },
+    mode: 'development',
     devServer: {
         static: path.resolve(__dirname, 'dist'), // Корневая директория для dev-сервера
         port: 3000, // Порт для запуска dev-сервера
