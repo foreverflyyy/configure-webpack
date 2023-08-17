@@ -5,5 +5,6 @@
 <img align="left" alt="React" width="30px" style="padding-right:10px;" src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" />
 
 <br/>
+<br/>
 
 # In this repository i configure Webpack from scratch to React application
