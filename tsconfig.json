@@ -19,7 +19,6 @@
     "paths": {
       // Allow `@/` to map to `src/client/`
       "@/*": ["./src/*"],
-      "@resources/*": ["./src/resources/*"]
     }
   },
   "include": ["./src/**/*", "./tests/unit/**/*"],
