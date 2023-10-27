@@ -1,10 +1,35 @@
-# Configure Webpack
+Представленный код в этом проекте предназначен для сайта Meet up. [MeetUp](https://meetup.com).
 
-<img align="left" alt="Webpack" width="30px" style="padding-right:10px;" src="https://www.vectorlogo.zone/logos/js_webpack/js_webpack-icon.svg" />
-<img align="left" alt="React" width="30px" style="padding-right:10px;" src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" />
-<img align="left" alt="TypeScript" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg" />
+## Getting Started
 
-<br/>
-<br/>
+Для начала, чтобы запустить проект, пропишите команды:
 
-# In this repository i configure Webpack from scratch to React application
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Откройте [http://localhost:3000](http://localhost:3000) в вашем браузере, чтобы увидеть результат.
+
+## Другие варианты запуска
+
+Также данный проект можно запустить с помощью Docker, прописав команду:
+
+```bash
+# для dev:
+docker build -t web-events-app-dev -f Dockerfile .
+docker run -p 3000:3000 web-events-app-dev
+
+# для prod:
+docker build -t web-events-app-prod -f Dockerfile.prod .
+docker run -p 3000:3000 web-events-app-prod
+```
+
+## Посмотреть Deploy версию в Vercel
+
+Вы можете посмотреть задеплоиную версию приложения [ по ссылке.](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
